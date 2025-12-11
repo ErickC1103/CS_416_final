@@ -1,14 +1,14 @@
 {% extends "ticket-master/base.html" %}
 {% block body %}
-    <div class="container my-3">
+    <div class="container my-3 bg-secondary p-3 shadow">
         <div class="row">
             <div class="col-7">
-                <h2>Update Tickets wished for {{ item.event.title }}</h2>
+                <h2 class="lead display-5 text-warning">Update Tickets wished for <br><b class="text-white">{{ item.event.title }}</b></h2>
 
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_div }}
-                    <button type="submit" class="btn btn-primary my-2">Update</button>
+                    <button type="submit" class="btn btn-primary my-2"><i class="fa-sharp fa-solid fa-ticket"></i> Update</button>
                 </form>
 
                 <a href="{% url 'wishlist' %}" class="btn btn-danger my-2">Back to Wishlist</a>

@@ -3,9 +3,18 @@
     <div class="container my-3">
         <form action="{% url 'remove_from_wishlist' item.id %}" method="post">
             {% csrf_token %}
-            <h3>Are you sure that you want to remove event <br> {{ item.event.title }} <br> from the wish list?</h3>
-            <button type="submit" class="btn btn-warning me-2">Remove</button>
-            <a href="{% url 'wishlist' %}" class="btn btn-info"><i class="fas fa-arrow-left"></i> Go Back</a>
+            <h3 class="lead text-center display-5">Are you sure that you want to remove event <br><b>{{ item.event.title }} </b><br> from the wish list?</h3>
+            <div class="row mt-5 justify-content-center text-center">
+                <div class="col-lg-6 mb-3">
+                    <button type="submit" class="btn btn-lg btn-danger me-2">Remove</button>
+                </div>
+                <div class="col-lg-6">
+                                <a href="{% url 'wishlist' %}" class="btn btn-lg btn-info"><i class="fas fa-arrow-left"></i> Go Back</a>
+
+                </div>
+            </div>
+            
+            
         </form>
     </div>
     
